@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<HotelStaffPortal.Web.Models.Entities.Staff>
+
+<h1>AllStaff</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var staff in Model)
+        {
+            <tr>
+                <td>@staff.Id</td>
+                <td>@staff.Name</td>       
+                <td>@staff.Email</td>
+                <td>
+                    <a class=" btn btn-primary" asp-controller="Staff" asp-action="Edit" asp-route-id="@staff.Id">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
